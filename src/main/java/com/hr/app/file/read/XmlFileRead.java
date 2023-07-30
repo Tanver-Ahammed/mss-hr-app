@@ -44,7 +44,8 @@ public class XmlFileRead {
                 }
             }
         } catch (ParserConfigurationException | IOException | SAXException | SQLException e) {
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
         }
     }
 

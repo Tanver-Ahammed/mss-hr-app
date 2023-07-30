@@ -19,12 +19,13 @@ public class DbConnection {
     }
 
     private Connection getConnection() {
-        Connection con;
+        Connection con = null;
         try {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
         return con;
     }
